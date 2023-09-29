@@ -1,24 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import ThirtyMargin from './components/ThirtyMargin';
+import ThirtyFiveMargin from './components/ThirtyFiveMargin';
+import FortyMargin from './components/FortyMargin';
+import FortyFiveMargin from './components/FortyFiveMargin';
+import FiftyMargin from './components/FiftyMargin';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Header/>
+    <FortyFiveMargin/>
+    <FortyMargin/>
+    <ThirtyFiveMargin/>
+    <ThirtyMargin/>
+    <FiftyMargin/> 
+    </>
   );
 }
 
