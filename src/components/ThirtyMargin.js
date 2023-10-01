@@ -6,12 +6,12 @@ const ThirtyMargin = () => {
 
   // Helper function to check if a value is numeric
   const isNumeric = (value) => {
-    return /^\d+$/.test(value);
+    return /^(\d+(\.\d{0,2})?|\.\d{1,2})$/.test(value); // Updated regex to allow up to 2 decimal points
   };
 
   // Calculate the cost per unit and price
   const calculateValues = () => {
-    if (isNumeric(quantity) && isNumeric(casePrice)) {
+    if (isNumeric(casePrice) && isNumeric(quantity)) { // Switched the order
       const costPerUnit = casePrice / quantity;
       const price = costPerUnit / 0.70;
       return { costPerUnit, price };
@@ -29,22 +29,7 @@ const ThirtyMargin = () => {
           <h2>30% Margin</h2>
           <input
             type="number"
-            placeholder="Quantity"
-            value={quantity.toString()}
-            onChange={(e) => {
-              const text = e.target.value;
-              if (isNumeric(text)) {
-                setQuantity(parseFloat(text));
-              } else {
-                setQuantity(0);
-              }
-            }}
-          />
-        </div>
-        <div className="row">
-          <input
-            type="number"
-            placeholder="Case Price"
+            placeholder="Case Price" // Switched the placeholder text
             value={casePrice.toString()}
             onChange={(e) => {
               const text = e.target.value;
@@ -52,6 +37,21 @@ const ThirtyMargin = () => {
                 setCasePrice(parseFloat(text));
               } else {
                 setCasePrice(0);
+              }
+            }}
+          />
+        </div>
+        <div className="row">
+          <input
+            type="number"
+            placeholder="Quantity" // Switched the placeholder text
+            value={quantity.toString()}
+            onChange={(e) => {
+              const text = e.target.value;
+              if (isNumeric(text)) {
+                setQuantity(parseFloat(text));
+              } else {
+                setQuantity(0);
               }
             }}
           />

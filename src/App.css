@@ -1,14 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100&family=Dela+Gothic+One&display=swap');
 
-.App {
+.keyboardAvoidingContainer {
   text-align: center;
   font-family:'Azeret Mono', monospace;
-  background-color: #282c34;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  background-color: #7C8C5A;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -28,6 +23,18 @@
   border: 2px solid black;
 }
 
+.header {
+  text-align: center;
+  font-family: 'Azeret Mono', monospace;
+  background-color: #A3C9D9;
+}
+
+.row {
+  text-align: center;
+  align-items: center;
+  font-family: 'Azeret Mono', monospace;
+  /* background-color: #A3C9D9; */
+}
 
 .App-link {
   color: #61dafb;
