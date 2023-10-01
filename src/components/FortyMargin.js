@@ -29,14 +29,12 @@ const FortyMargin = () => {
           <h2>40% Margin</h2>
           <input
             type="number"
-            placeholder="Case Price" // Switched the placeholder text
+            placeholder="Case Price"
             value={casePrice.toString()}
             onChange={(e) => {
               const text = e.target.value;
-              if (isNumeric(text)) {
+              if (text === '' || isNumeric(text)) { // Only reset to 0 if not numeric or empty
                 setCasePrice(parseFloat(text));
-              } else {
-                setCasePrice(0);
               }
             }}
           />
@@ -44,14 +42,12 @@ const FortyMargin = () => {
         <div className="row">
           <input
             type="number"
-            placeholder="Quantity" // Switched the placeholder text
+            placeholder="Quantity"
             value={quantity.toString()}
             onChange={(e) => {
               const text = e.target.value;
-              if (isNumeric(text)) {
+              if (text === '' || isNumeric(text)) { // Only reset to 0 if not numeric or empty
                 setQuantity(parseFloat(text));
-              } else {
-                setQuantity(0);
               }
             }}
           />
